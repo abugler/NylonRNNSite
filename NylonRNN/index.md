@@ -39,7 +39,7 @@ On the piano roll, both would be represented by 96 consecutive 1s in row 20. How
 
 In this chord:
 
-![chord](wacky_chords.png)
+![chord](src\wacky_chords.png)
 The Attack matrix (simplified to one timestep equivalent to a quarter note) for this chord would be:
 
 [[1, 1, 0, 0],
