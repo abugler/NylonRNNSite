@@ -37,19 +37,17 @@ The Neural Network contains the following:
  - 3 LSTM layers consisting of 512 units each
  - Following the LSTM Layers, a fully connected layer with sigmoid activation
 
-The network is then trained with 1000 epochs with mini-batches of 50. The loss function is Binary Cross Entropy.  
+The network is then trained with 10000 epochs with mini-batches of 50. Each batch consists of 50 encoded matrices. Each column is forward fed into the network, and the loss is measured between the network output and the next column,  The loss function is Binary Cross Entropy.  
 
-- Bulleted
-- List
+## Results
 
-1. Numbered
-2. List
+Training is still taking place. Some preliminary results may be found below:
 
-**Bold** and _Italic_ and `Code` text
+5000 Epochs trained on solely Aguado_12valses_Op1_No12.mid MIDI file
+![experimental](src\experimental_track_12_11.png)
 
-[Link](url) and ![Image](src)
+1000 Epochs trained on solely Aguado_12valses_Op1_No12.mid MIDI file
+![cadence](src\cadence_12_9.png)
 
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 
