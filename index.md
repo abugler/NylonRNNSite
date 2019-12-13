@@ -1,19 +1,43 @@
-## Welcome to GitHub Pages
+# NylonRNN
+By Andreas Bugler
+## NylonRNN generates short pieces for classical guitar via an LSTM network. 
 
-You can use the [editor on GitHub](https://github.com/abugler/NylonRNNSite/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+### For COMP_SCI 397 Computational Creativity with Bryan Pardo at Northwestern University
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Training dataset
 
-### Markdown
+The training dataset for this project was found on Reddit, specifically on r/datasets. Thanks to u/midi_man to collecting this dataset.  The reddit post can be found [here](https://www.reddit.com/r/datasets/comments/3akhxy/the_largest_midi_collection_on_the_internet/).
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+In this dataset, the "Classical_Guitar_classicalguitarmidi.com_MIDIRip" folder was used, and the final training dataset was filtered from the folder.  For a song to make it into the final training set, it has to have the following attributes:
+ - No more than 250 bpm. The midi parsing library experienced trouble generating a piano roll for especially fast songs.
+ - All notes had to be inside the range E2 and B5. E2 and B5 are the lowest and highest fretted notes on a standard classical guitar.
+ - The shortest note of each song had to be either a 1/32th note or a 1/16th note tripet.  More information about this can be found in the encoding. 
+ - Songs with rare time signatures such as 17/8, 21/8, or 7/4 were removed.
+ - The midi track must only consist of a single guitar.
 
-```markdown
-Syntax highlighted code block
+In addition, every song with tempo changes where split into multiple tracks.  Any segments less than four measures were removed.
 
-# Header 1
-## Header 2
-### Header 3
+This results in 712 songs for training, filtered from a training dataset of 3,519.
+
+## Encoding
+
+Each midi segment is encoded to a matrix with shape (50, t)
+
+Each column c in [0, t-1] represents a timestep, which is 1/24 of a quarter note.  This encoding allows us to encode both a 1/32th note and a 1/16th note triplet. However, during decoding, if 1/24th notes are found, they may show up as 1/64th notes in music notation software. 
+
+Rows 0-43 of the matrix we call the piano roll. If a 1 exists in row n, then the midi pitch represented by the integer 40 + n is being played at this timestep. 0 if otherwise. 40 is E2, the lowest note of the guitar, and 83 is the highest note, B5. 
+
+Rows 44-49 of the matrix we call the attack matrix. If a 1 exists in **row 44**, then the **lowest note** played during this timestep begins in this timestep.  Likewise, if a 1 exists in **row 45-49**, then the **2nd-6th lowest notes** played this timestep begins in this timestep. The rationale for the attack matrix is to differentiate between a note being held, and multiple notes being played in succession. 
+
+An example may be found below:
+
+## Network Architecture and Training
+
+The Neural Network contains the following:
+ - 3 LSTM layers consisting of 512 units each
+ - Following the LSTM Layers, a fully connected layer with sigmoid activation
+
+The network is then trained with 1000 epochs with mini-batches of 50. The loss function is Binary Cross Entropy.  
 
 - Bulleted
 - List
@@ -24,14 +48,8 @@ Syntax highlighted code block
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
-```
+
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/abugler/NylonRNNSite/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
