@@ -3,7 +3,7 @@ By Andreas Bugler
 
 ### For COMP_SCI 397 Computational Creativity with Bryan Pardo at Northwestern University
 
-NylonRNN generates short pieces for classical guitar via an LSTM network. 
+NylonRNN generates short pieces for classical guitar via an LSTM network. [code here](https://github.com/abugler/NylonRNN)
 
 ## Training dataset
 
@@ -46,7 +46,7 @@ The Attack matrix (simplified to one timestep equivalent to a quarter note) for 
 [[1, 1, 0, 0],
 
  [1, 0, 0, 0],
- 
+
  [0, 0, 1, 0]]
 
 ## Network Architecture and Training
@@ -58,6 +58,8 @@ The Neural Network contains the following:
 The network is then trained with 10000 epochs with mini-batches of 50. Each batch consists of 50 encoded matrices. Each column is forward fed into the network, and the loss is measured between the network output and the next column,  The loss function is Binary Cross Entropy.  
 
 The model architecture and training regimen is modeled after FolkRNN. You may find FolkRNN [here](https://folkrnn.org).
+
+The model was implemented in PyTorch. 
 
 ## Results
 
