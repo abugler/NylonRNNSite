@@ -12,7 +12,7 @@ The training dataset for this project was found on Reddit, specifically on r/dat
 In this dataset, the "Classical_Guitar_classicalguitarmidi.com_MIDIRip" folder was used, and the final training dataset was filtered from the folder.  For a song to make it into the final training set, it has to have the following attributes:
  - No more than 250 bpm. The midi parsing library experienced trouble generating a piano roll for especially fast songs.
  - All notes had to be inside the range E2 and B5. E2 and B5 are the lowest and highest fretted notes on a standard classical guitar.
- - The shortest note of each song had to be either a 1/32th note or a 1/16th note tripet.  More information about this can be found in the encoding. 
+ - The shortest note of each song had to be either a 1/32nd note or a 1/16th note tripet.  More information about this can be found in the encoding. 
  - Songs with rare time signatures such as 17/8, 21/8, or 7/4 were removed.
  - The midi track must only consist of a single guitar.
 
@@ -24,7 +24,7 @@ This results in 712 songs for training, filtered from a training dataset of 3,51
 
 Each midi segment is encoded to a matrix with shape (50, t)
 
-Each column c in [0, t-1] represents a timestep, which is 1/24 of a quarter note.  This encoding allows us to encode both a 1/32th note and a 1/16th note triplet. However, during decoding, if 1/24th notes are found, they may show up as 1/64th notes in music notation software. 
+Each column c in [0, t-1] represents a timestep, which is 1/24 of a quarter note.  This encoding allows us to encode both a 1/32nd note and a 1/16th note triplet. However, during decoding, if 1/24th notes are found, they may show up as 1/64th notes in music notation software. 
 
 Rows 0-43 of the matrix we call the piano roll. If a 1 exists in row n, then the midi pitch represented by the integer 40 + n is being played at this timestep. 0 if otherwise. 40 is E2, the lowest note of the guitar, and 83 is the highest note, B5. 
 
