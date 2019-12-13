@@ -1,8 +1,9 @@
 # NylonRNN
 By Andreas Bugler
-## NylonRNN generates short pieces for classical guitar via an LSTM network. 
 
 ### For COMP_SCI 397 Computational Creativity with Bryan Pardo at Northwestern University
+
+NylonRNN generates short pieces for classical guitar via an LSTM network. 
 
 ## Training dataset
 
@@ -39,15 +40,19 @@ The Neural Network contains the following:
 
 The network is then trained with 10000 epochs with mini-batches of 50. Each batch consists of 50 encoded matrices. Each column is forward fed into the network, and the loss is measured between the network output and the next column,  The loss function is Binary Cross Entropy.  
 
+The model architecture and training regimen is modeled after FolkRNN. You may find FolkRNN [here](https://folkrnn.org).
+
 ## Results
 
 Training is still taking place. Some preliminary results may be found below:
 
 5000 Epochs trained on solely Aguado_12valses_Op1_No12.mid MIDI file
 ![experimental](src\experimental_track_12_11.png)
+[Download](midi\experimental_1000_epochs_aguado.mid)
 
 1000 Epochs trained on solely Aguado_12valses_Op1_No12.mid MIDI file
 ![cadence](src\cadence_12_9.png)
+[Download](midi\experimental_5000_epochs_aguado.mid)
 
 
 
