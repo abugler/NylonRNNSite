@@ -55,11 +55,15 @@ The Neural Network contains the following:
  - 3 LSTM layers consisting of 512 units each
  - Following the LSTM Layers, a fully connected layer with sigmoid activation
 
-The network is then trained with 10000 epochs with mini-batches of 50. Each batch consists of 50 encoded matrices. Each column is forward-fed into the network, and the loss is measured between the network output and the next column.  The loss function is Binary Cross Entropy.  
+The network is then trained with 10000 epochs with mini-batches of 50 encoded matrices. Each column is forward-fed into the network, and the loss is measured between the network output and the next column.  The loss function is Binary Cross Entropy.  
 
 The model architecture and training regimen is modeled after FolkRNN. You may find FolkRNN [here](https://folkrnn.org).
 
 The model was implemented in PyTorch. 
+
+## Sampling
+
+The first timestep is sampled from the first column from an encoded matrix. The column is forward-fed into the network, and the output is the probabilities that a 1 exists in the next timestep. Repeat this with the next column until the desired number of beats has been reached. 
 
 ## Results
 
