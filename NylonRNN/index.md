@@ -35,6 +35,7 @@ An example may be found below:
 Lets say we have a whole note, and four quarter notes.
 
 ![whole](src\whole_note.png) ![quarter](src\quarter_notes.png)
+
 On the piano roll, both would be represented by 96 consecutive 1s in row 20. However how would we differentiate between the two examples? The whole note will be additionally represented by a 1 in the first row of the attack matrix when the whole note begins, while the quarter notes will be additionally represented by a 1 in the first row every 24 timesteps. 
 
 In this chord:
@@ -43,7 +44,9 @@ In this chord:
 The Attack matrix (simplified to one timestep equivalent to a quarter note) for this chord would be:
 
 [[1, 1, 0, 0],
+
  [1, 0, 0, 0],
+ 
  [0, 0, 1, 0]]
 
 ## Network Architecture and Training
