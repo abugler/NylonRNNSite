@@ -55,7 +55,7 @@ The Neural Network contains the following:
  - 3 LSTM layers consisting of 512 units each
  - Following the LSTM Layers, a fully connected layer with sigmoid activation
 
-The network is then trained with 10000 epochs with mini-batches of 50. Each batch consists of 50 encoded matrices. Each column is forward fed into the network, and the loss is measured between the network output and the next column,  The loss function is Binary Cross Entropy.  
+The network is then trained with 10000 epochs with mini-batches of 50. Each batch consists of 50 encoded matrices. Each column is forward-fed into the network, and the loss is measured between the network output and the next column.  The loss function is Binary Cross Entropy.  
 
 The model architecture and training regimen is modeled after FolkRNN. You may find FolkRNN [here](https://folkrnn.org).
 
