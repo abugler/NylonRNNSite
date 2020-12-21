@@ -1,7 +1,7 @@
 ---
 layout: home
-title: Hi!
-subtitle: Welcome to my Website
+title: Andreas Bugler
+subtitle: Hi! Welcome to my Website
 ---
 I'm Andreas Bugler an undergraduate student at Northwestern University. I'm interested primarily in machine learning, computer audition, and quantitative trading. I do research in audio source separation in the [Interactive Audio Lab](https://interactiveaudiolab.github.io) under the supervision of Prof. Bryan Pardo, [Ethan Manilow](https://ethman.github.io), and [Dr. Prem Seetharaman](https://pseeth.github.io).
 
