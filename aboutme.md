@@ -1,16 +1,10 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+I'm Andreas Bugler an undergraduate student at Northwestern University. I'm interested primarily machine learning, computer audition, and quantitative trading. I do research in audio source separation in the [Interactive Audio Lab](https://interactiveaudiolab.github.io) under the supervision of Prof. Bryan Pardo, [Ethan Manilow](https://ethman.github.io), and [Dr. Prem Seetharaman](https://pseeth.github.io).
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+I will be working software engineering internships at [Belvedere Trading](belvederetrading.com) during Winter 2021, and [Chicago Trading Company](https://www.chicagotrading.com) during Summer 2021.
 
-What else do you need?
-
-### My story
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+In my free time, I'm either playing guitar, cooking new dishes, or pretending to be a tourist in Chicago. 
