@@ -1,5 +1,7 @@
-# NylonRNN
-By Andreas Bugler
+---
+layout: page
+title: NylonRNN
+---
 
 ### For COMP_SCI 397 Computational Creativity with Bryan Pardo at Northwestern University
 
