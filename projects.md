@@ -11,7 +11,7 @@ I studied the effect of transfer learning on music source separation on domains 
 #### March 2020 - Present
 `nussl` is a python package for quick and easy implementation of audio source separation. I specifically contributed utilities for data augmentation and inferfacing with datasets. 
 
-## [NylonRNN](NylonRNN)
+## [NylonRNN](../NylonRNN)
 #### November 2019 - December 2019
 A deep learning system to generate segments of classical guitar pieces. The final project for COMP_SCI 397 Computational Creativity.
 
