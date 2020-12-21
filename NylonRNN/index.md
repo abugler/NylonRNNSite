@@ -67,7 +67,7 @@ The first timestep is sampled from the first column from an encoded matrix. The 
 
 ## Results
 
-Training is still taking place. Some preliminary results may be found below:
+Some preliminary results may be found below:
 
 5000 Epochs trained on solely Aguado_12valses_Op1_No12.mid MIDI file
 ![experimental](src\experimental_track_12_11.png)
